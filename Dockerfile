@@ -5,6 +5,6 @@ RUN gradle bootJar --no-daemon
 
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
-COPY --from=build /app/build/libs/*.jar platzi_play.jar
+COPY --from=build /app/build/libs/*.jar platzi-play.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-Dspring.profiles.active=prod","-jar", "platzi-play-1.0.0.jar"]
